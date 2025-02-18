@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     const app = document.getElementById("app");
-    
+
     function renderForm(isSignup) {
         app.innerHTML = `
             <div class="container">
@@ -17,6 +17,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 </form>
                 <p class="toggle">${isSignup ? "Already have an account? Login" : "Don't have an account? Sign up"}</p>
             </div>
+
+           
         `;
 
         document.querySelector(".toggle").addEventListener("click", () => {
@@ -45,17 +47,32 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (isSignup) {
                 localStorage.setItem("user", JSON.stringify({ username, password, email, name, surname, mobile }));
-                alert("Signup successful! You can now login.");
-                renderForm(false);
+                showSuccessMessage("Signup successful! Please log in.", false);
             } else {
                 const storedUser = JSON.parse(localStorage.getItem("user"));
                 if (storedUser && storedUser.username === username && storedUser.password === password) {
-                    alert("Login successful! Welcome, " + storedUser.name);
+                    showSuccessMessage("Login successful!", true);
                 } else {
                     alert("Invalid username or password.");
                 }
             }
         });
+    }
+
+    function showSuccessMessage(message, redirectToDashboard) {
+        const modal = document.getElementById("success-modal");
+        const messageElement = document.getElementById("success-message");
+        const okButton = document.getElementById("ok-button");
+
+        messageElement.innerText = message;
+        modal.style.display = "flex"; // Show modal
+
+        okButton.addEventListener("click", function () {
+            modal.style.display = "none"; // Hide modal
+            if (redirectToDashboard) {
+                window.location.href = "BankApplication.html"; // Redirect to dashboard
+            }
+        }, { once: true }); // Ensure the event listener runs only once
     }
 
     renderForm(false);

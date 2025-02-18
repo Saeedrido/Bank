@@ -1,16 +1,27 @@
 <!DOCTYPE html>
-<html>
-    <head></head>
-    <body>
-        <header>
-            <img src="imges/MapPhone.4f18e044.png" alt=""> Welcome To SaeedRido Bank
-            <p>
-                Balance:   Transaction History 
-            </p>
-        </header>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banking App</title>
+    <link rel="stylesheet" href="css/BankApplication.css">
+</head>
+<body>
 
-        <nav>
+    <div class="container">
+        <h1>Banking System</h1>
+        <div class="balance-section">
+            <p>Balance: <span id="balance">****</span></p>
+            <button onclick="toggleBalance()">Show/Hide Balance</button>
+        </div>
 
-        </nav>
-    </body>
+        <div class="actions">
+            <button onclick="deposit()">Deposit</button>
+            <button onclick="withdraw()">Withdraw</button>
+            <button onclick="transfer()">Transfer</button>
+        </div>
+    </div>
+
+    <script src="script/BankApplication.js"></script>
+</body>
 </html>

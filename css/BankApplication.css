@@ -9,10 +9,17 @@ body {
 .container {
     max-width: 400px;
     margin: 50px auto;
+    margin-bottom: -25px;
     padding: 20px;
     background: white;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.toggle-button{
+    background-color: rgb(190, 244, 227);
+    border: none;
+    padding: 10px;
 }
 
 h1 {
@@ -23,16 +30,117 @@ h1 {
     margin-bottom: 20px;
 }
 
-button {
-    padding: 10px 15px;
-    margin: 5px;
-    border: none;
-    background: #007bff;
-    color: white;
-    border-radius: 5px;
+/* Add these styles to your BankApplication.css file */
+
+/* Container for other-actions */
+.other-actions{
+    max-width: 400px;
+    margin: 50px auto;
+    margin-bottom: 80px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+.actions, .other-actions {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 20px;
+}
+
+/* Individual action item (image + text) */
+.action-item {
+    text-align: center;
     cursor: pointer;
 }
 
-button:hover {
-    background: #0056b3;
+/* css for other optionns */
+/* Style for the overall container */
+.other-actions {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);  /* Create 4 equal columns */
+    gap: 20px;  /* Space between items */
+    padding: 20px;
+}
+
+/* Container for each image in the next div */
+.icon-container {
+    background-color: rgb(190, 244, 227); /* Background color for the container */
+    border-radius: 10px;
+    padding: 10px;
+    width: 30px;  /* Fixed size for the container */
+    height: 30px; /* Fixed size for the container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Style for the icons (make them small) */
+.action-icon {
+    width: 30px; /* Small size for icons */
+    height: auto; /* Maintain aspect ratio */
+    filter: sepia(100%) hue-rotate(120deg) saturate(300%); /* Example of changing color */
+}
+
+/* Style for text under each icon */
+.action-item p {
+    font-size: 14px;
+    margin-top: 5px;
+    margin-right:30px ;
+}
+
+
+/* Individual action item (image + text) */
+.action-item {
+    text-align: center;
+    cursor: pointer;
+}
+
+
+
+
+/* Add these styles to your BankApplication.css for the image in the buttom */
+
+/* Container for images */
+
+.image-container {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    padding: 0 10px;
+    margin: 0px auto;
+    padding: 5px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border: none;
+}
+
+/* Style for each icon container */
+.icon {
+    text-align: center;
+    width: 50px;  /* Adjust width for each icon */
+}
+
+/* Style for the icon images */
+.icon-image {
+    width: 40px;  /* Makes the images small */
+    height: 10;  /* Maintain aspect ratio */
+    display: block;
+    margin: 0 auto;
+}
+
+/* Add space between images */
+.icon {
+    margin: 0 10px;
+    margin-bottom: -10px;
+}
+
+/* Style for the text under each icon */
+.icon p {
+    font-size: 12px;
+    margin-top: 5px;
+    color: #000;  /* Adjust text color if needed */
 }
